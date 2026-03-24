@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "title": "E-WASTE HACKATHON 2026",
+    "subtitle": "Innovate. Create. Sustain.",
+    "description": "Join us for 48 hours of innovation where the brightest minds come together to tackle the growing challenge of electronic waste.",
+    "ctaText": "Register Now",
+    "ctaLink": "#register"
+  },
+  "about": {
+    "title": "About the Hackathon",
+    "description": "The E-Waste Hackathon is a 48-hour event bringing together developers, designers, environmentalists, and entrepreneurs to build innovative solutions for electronic waste management. Participants will work in teams to create prototypes that address real-world e-waste challenges.",
+    "highlights": [
+      {
+        "title": "48 Hours",
+        "description": "Non-stop innovation and building"
+      },
+      {
+        "title": "Prizes",
+        "description": "Exciting prizes for winning teams"
+      },
+      {
+        "title": "Mentorship",
+        "description": "Guidance from industry experts"
+      },
+      {
+        "title": "Networking",
+        "description": "Connect with like-minded innovators"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "stage": "Registration Opens",
+      "date": "March 1, 2026",
+      "description": "Sign up and form your team. Early registration is encouraged as spots are limited."
+    },
+    {
+      "stage": "Kickoff Event",
+      "date": "March 30, 2026",
+      "description": "Opening ceremony, problem statements revealed, and hacking begins."
+    },
+    {
+      "stage": "Mentorship Sessions",
+      "date": "March 30 - 31, 2026",
+      "description": "Scheduled check-ins with mentors to refine your ideas and get expert feedback."
+    },
+    {
+      "stage": "Midpoint Check-in",
+      "date": "March 31, 2026",
+      "description": "Progress review and feedback from judges. Adjust your approach based on insights."
+    },
+    {
+      "stage": "Submissions Due",
+      "date": "April 1, 2026",
+      "description": "Final submissions and demo preparation. Present your solution to the judges."
+    },
+    {
+      "stage": "Stage 3 dementia",
+      "date": "April 1, 2026",
+      "description": "Winners announced, prizes distributed, and closing celebration."
+    },
+    {
+      "stage": "Awards Ceremony",
+      "date": "April 1, 2026",
+      "description": "Winners announced, prizes distributed, and closing celebration."
+    }
+  ],
+  "company": {
+    "name": "GreenTech Solutions",
+    "tagline": "Pioneering Sustainable Technology",
+    "description": "GreenTech Solutions is a leading innovator in sustainable technology and e-waste management. Founded with the mission to reduce the environmental impact of electronic waste, we develop cutting-edge recycling technologies and circular economy solutions that give electronics a second life.",
+    "stats": [
+      {
+        "value": "50K+",
+        "label": "Tons Recycled"
+      },
+      {
+        "value": "200+",
+        "label": "Partners"
+      },
+      {
+        "value": "15",
+        "label": "Countries"
+      }
+    ],
+    "website": "https://example.com"
+  },
+  "countdown": {
+    "targetDate": "2026-03-30T00:00:00",
+    "title": "Hackathon Starts In"
+  }
+}
