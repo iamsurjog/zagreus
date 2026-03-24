@@ -1,0 +1,48 @@
+[
+    {
+        "id": "sub-1",
+        "name": "architecture.pdf",
+        "url": "#",
+        "memberId": "part-1",
+        "member": {
+            "id": "part-1",
+            "userId": "user-1",
+            "teamId": "team-1",
+            "role": "LEADER",
+            "status": "ACTIVE",
+            "user": {
+                "id": "user-1",
+                "name": "Alex Chen",
+                "email": "alex.chen@example.com",
+                "emailVerified": true,
+                "image": null,
+                "createdAt": 1700000000000,
+                "updatedAt": 1700000000000
+            }
+        },
+        "reqId": "req-1"
+    },
+    {
+        "id": "sub-2",
+        "name": "wireframe_v2.png",
+        "url": "#",
+        "memberId": "part-2",
+        "member": {
+            "id": "part-2",
+            "userId": "user-2",
+            "teamId": "team-1",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "user": {
+                "id": "user-2",
+                "name": "Maya Rodriguez",
+                "email": "maya.r@example.com",
+                "emailVerified": true,
+                "image": null,
+                "createdAt": 1700000000000,
+                "updatedAt": 1700000000000
+            }
+        },
+        "reqId": "req-2"
+    }
+]

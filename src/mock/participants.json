@@ -1,0 +1,125 @@
+[
+    {
+        "id": "part-1",
+        "userId": "user-1",
+        "teamId": "team-1",
+        "role": "LEADER",
+        "status": "ACTIVE",
+        "user": {
+            "id": "user-1",
+            "name": "Alex Chen",
+            "email": "alex.chen@example.com",
+            "emailVerified": true,
+            "image": null,
+            "createdAt": 1700000000000,
+            "updatedAt": 1700000000000
+        },
+        "team": {
+            "id": "team-1",
+            "name": "Star Destroyers",
+            "status": "ACTIVE",
+            "joinCode": "HERMES-ALPHA"
+        },
+        "submissions": [
+            {
+                "id": "sub-1",
+                "name": "architecture.pdf",
+                "url": "#",
+                "memberId": "part-1",
+                "reqId": "req-1"
+            }
+        ]
+    },
+    {
+        "id": "part-2",
+        "userId": "user-2",
+        "teamId": "team-1",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "user": {
+            "id": "user-2",
+            "name": "Maya Rodriguez",
+            "email": "maya.r@example.com",
+            "emailVerified": true,
+            "image": null,
+            "createdAt": 1700000000000,
+            "updatedAt": 1700000000000
+        },
+        "team": {
+            "id": "team-1",
+            "name": "Star Destroyers",
+            "status": "ACTIVE",
+            "joinCode": "HERMES-ALPHA"
+        },
+        "submissions": []
+    },
+    {
+        "id": "part-3",
+        "userId": "user-3",
+        "teamId": "team-2",
+        "role": "LEADER",
+        "status": "ACTIVE",
+        "user": {
+            "id": "user-3",
+            "name": "Jordan Park",
+            "email": "jordan.p@example.com",
+            "emailVerified": true,
+            "image": null,
+            "createdAt": 1700000000000,
+            "updatedAt": 1700000000000
+        },
+        "team": {
+            "id": "team-2",
+            "name": "Rebel Alliance",
+            "status": "ACTIVE",
+            "joinCode": "HERMES-BETA"
+        },
+        "submissions": []
+    },
+    {
+        "id": "part-4",
+        "userId": "user-4",
+        "teamId": "team-2",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "user": {
+            "id": "user-4",
+            "name": "Sam Wilson",
+            "email": "sam.w@example.com",
+            "emailVerified": true,
+            "image": null,
+            "createdAt": 1700000000000,
+            "updatedAt": 1700000000000
+        },
+        "team": {
+            "id": "team-2",
+            "name": "Rebel Alliance",
+            "status": "ACTIVE",
+            "joinCode": "HERMES-BETA"
+        },
+        "submissions": []
+    },
+    {
+        "id": "part-5",
+        "userId": "user-5",
+        "teamId": null,
+        "role": "MAIDENLESS",
+        "status": "ACTIVE",
+        "user": {
+            "id": "user-5",
+            "name": "Lone Wolf",
+            "email": "lone.w@example.com",
+            "emailVerified": true,
+            "image": null,
+            "createdAt": 1700000000000,
+            "updatedAt": 1700000000000
+        },
+        "team": {
+            "id": "",
+            "name": "",
+            "status": "ACTIVE",
+            "joinCode": ""
+        },
+        "submissions": []
+    }
+]

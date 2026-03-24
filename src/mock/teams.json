@@ -1,0 +1,91 @@
+[
+    {
+        "id": "team-1",
+        "name": "Star Destroyers",
+        "status": "ACTIVE",
+        "joinCode": "HERMES-ALPHA",
+        "selectedMission": "mis-1",
+        "mission": {
+            "id": "mis-1",
+            "name": "Alderaan",
+            "description": "Design a decentralized satellite data marketplace where farmers can access real-time agricultural monitoring data.",
+            "documentName": "PS1.pdf"
+        },
+        "members": [
+            {
+                "id": "part-1",
+                "userId": "user-1",
+                "teamId": "team-1",
+                "role": "LEADER",
+                "status": "ACTIVE",
+                "user": {
+                    "id": "user-1",
+                    "name": "Alex Chen",
+                    "email": "alex.chen@example.com",
+                    "emailVerified": true,
+                    "image": null,
+                    "createdAt": 1700000000000,
+                    "updatedAt": 1700000000000
+                }
+            },
+            {
+                "id": "part-2",
+                "userId": "user-2",
+                "teamId": "team-1",
+                "role": "MEMBER",
+                "status": "ACTIVE",
+                "user": {
+                    "id": "user-2",
+                    "name": "Maya Rodriguez",
+                    "email": "maya.r@example.com",
+                    "emailVerified": true,
+                    "image": null,
+                    "createdAt": 1700000000000,
+                    "updatedAt": 1700000000000
+                }
+            }
+        ]
+    },
+    {
+        "id": "team-2",
+        "name": "Rebel Alliance",
+        "status": "ACTIVE",
+        "joinCode": "HERMES-BETA",
+        "selectedMission": null,
+        "mission": null,
+        "members": [
+            {
+                "id": "part-3",
+                "userId": "user-3",
+                "teamId": "team-2",
+                "role": "LEADER",
+                "status": "ACTIVE",
+                "user": {
+                    "id": "user-3",
+                    "name": "Jordan Park",
+                    "email": "jordan.p@example.com",
+                    "emailVerified": true,
+                    "image": null,
+                    "createdAt": 1700000000000,
+                    "updatedAt": 1700000000000
+                }
+            },
+            {
+                "id": "part-4",
+                "userId": "user-4",
+                "teamId": "team-2",
+                "role": "MEMBER",
+                "status": "ACTIVE",
+                "user": {
+                    "id": "user-4",
+                    "name": "Sam Wilson",
+                    "email": "sam.w@example.com",
+                    "emailVerified": true,
+                    "image": null,
+                    "createdAt": 1700000000000,
+                    "updatedAt": 1700000000000
+                }
+            }
+        ]
+    }
+]

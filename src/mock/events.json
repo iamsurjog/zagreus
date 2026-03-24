@@ -1,0 +1,63 @@
+[
+    {
+        "id": "evt-1",
+        "name": "Round 1",
+        "description": "Initial design phase. Teams must submit their system architecture document and a preliminary wireframe of the Web3 satellite data verification interface.",
+        "startTime": "09:00",
+        "requirements": [
+            {
+                "id": "req-1",
+                "name": "Architecture Document",
+                "type": ".pdf"
+            },
+            {
+                "id": "req-2",
+                "name": "Wireframe",
+                "type": ".png"
+            }
+        ]
+    },
+    {
+        "id": "evt-2",
+        "name": "Lunch Break",
+        "description": "Take a break and recharge. Networking encouraged.",
+        "startTime": "12:30",
+        "requirements": []
+    },
+    {
+        "id": "evt-3",
+        "name": "Round 2",
+        "description": "Prototype development. Submit your working smart contract prototype and a demo video showcasing decentralized access control for satellite data streams.",
+        "startTime": "14:00",
+        "requirements": [
+            {
+                "id": "req-3",
+                "name": "Smart Contract Code",
+                "type": ".zip"
+            },
+            {
+                "id": "req-4",
+                "name": "Demo Video",
+                "type": ".mp4"
+            }
+        ]
+    },
+    {
+        "id": "evt-4",
+        "name": "Round 3",
+        "description": "Final presentation round. Teams present their complete solution including social impact analysis and scalability report.",
+        "startTime": "18:00",
+        "requirements": [
+            {
+                "id": "req-5",
+                "name": "Presentation",
+                "type": ".pdf"
+            },
+            {
+                "id": "req-6",
+                "name": "Source Code",
+                "type": ".zip"
+            }
+        ]
+    }
+]

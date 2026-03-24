@@ -1,0 +1,344 @@
+@import 'tailwindcss';
+@plugin 'tailwindcss-motion';
+
+@theme {
+    --font-sans: 'Space Grotesk', sans-serif;
+    --font-title: 'Zalando Sans Expanded', serif;
+    --color-text: #e4e9ed;
+    --color-background: #0b1117;
+    --color-primary: #8cb6dc;
+    --color-secondary: #185185;
+    --color-accent: #3e9df1;
+}
+
+body {
+    @apply m-0  text-text;
+    background: radial-gradient(
+        50% 158.64% at 50% 50%,
+        #0b1117 0%,
+        #000000 100%
+    );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.block-line-wrapper {
+    position: relative;
+    width: max-content;
+    display: block;
+}
+
+.block-line {
+    position: relative;
+    display: block;
+}
+
+.block-revealer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 101%;
+    pointer-events: none;
+    will-change: transform;
+    z-index: 1;
+}
+
+@layer components {
+    .title-gradient {
+        @apply bg-linear-to-b from-accent to-secondary;
+    }
+
+    .header-link {
+        @apply relative block p-6 text-lg uppercase border border-transparent hover:border-secondary transition-all text-nowrap;
+    }
+
+    .header-link-active {
+        @apply bg-radial from-accent/20 to-secondary/10 text-accent relative;
+
+        &::before {
+            content: '';
+            @apply absolute -inset-px border-2 z-10 border-accent pointer-events-none -motion-translate-x-in-[10px] motion-opacity-in motion-duration-150;
+
+            clip-path: polygon(
+                0px 0px,
+                20px 0px,
+                20px 2px,
+                2px 2px,
+                2px 20px,
+                0px 20px,
+                0px calc(100% - 20px),
+                2px calc(100% - 20px),
+                2px calc(100% - 2px),
+                20px calc(100% - 2px),
+                20px 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply absolute -inset-px border-2 z-10 border-accent pointer-events-none motion-translate-x-in-[10px] motion-opacity-in motion-duration-150;
+
+            clip-path: polygon(
+                100% 0px,
+                calc(100% - 20px) 0px,
+                calc(100% - 20px) 2px,
+                calc(100% - 2px) 2px,
+                calc(100% - 2px) 20px,
+                100% 20px,
+
+                100% calc(100% - 20px),
+                calc(100% - 2px) calc(100% - 20px),
+                calc(100% - 2px) calc(100% - 2px),
+                calc(100% - 20px) calc(100% - 2px),
+                calc(100% - 20px) 100%,
+                100% 100%
+            );
+        }
+    }
+
+    .modal-pointy-corners {
+        @apply relative;
+
+        &::after,
+        &::before {
+            content: '';
+            /* Corrected Syntax */
+            filter: drop-shadow(
+                    0 0 15px
+                        color-mix(
+                            in srgb,
+                            var(--color-primary),
+                            transparent 50%
+                        )
+                )
+                drop-shadow(0 0 0px var(--color-primary))
+                drop-shadow(0 0 2px var(--color-primary))
+                drop-shadow(0 0 8px var(--color-primary));
+            @apply size-10 z-10 border-inherit absolute scale-105;
+        }
+
+        &::before {
+            @apply top-0 left-0 border-l-4 border-t-4 -motion-translate-x-in -motion-translate-y-in motion-duration-150 motion-delay-100 motion-ease-in-back;
+        }
+
+        &::after {
+            @apply bottom-0 right-0 border-r-4 border-b-4 motion-translate-x-in motion-translate-y-in motion-duration-150 motion-delay-100 motion-ease-in-back;
+        }
+    }
+
+    .input-field {
+        @apply p-3 bg-secondary/10 border border-secondary placeholder:text-secondary focus:border-primary focus:outline-none transition-colors w-full;
+    }
+
+    .form-label {
+        @apply text-2xl font-title;
+    }
+
+    .scifi-button-primary {
+        @apply text-primary font-bold uppercase relative inline-block p-2 transition-colors hover:cursor-pointer;
+        isolation: isolate;
+
+        &::before {
+            content: '';
+            @apply bg-primary absolute inset-0 -z-2 transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply bg-secondary absolute inset-px -z-1 transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+            box-shadow:
+                inset -4px -4px 8px #00000040,
+                inset 4px 4px 4px #3e9df140;
+        }
+
+        &:hover::before {
+            @apply bg-primary;
+        }
+
+        &:hover::after {
+            background: color-mix(in srgb, var(--color-secondary), white 5%);
+            @apply cursor-pointer;
+        }
+    }
+
+    .scifi-button-secondary {
+        @apply text-secondary font-bold uppercase relative inline-block p-2 hover:text-primary hover:cursor-pointer transition-colors;
+        isolation: isolate;
+
+        &::before {
+            content: '';
+            @apply bg-secondary absolute inset-0 -z-2 transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply bg-background absolute inset-px -z-1 transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+        }
+
+        &:hover::before {
+            @apply bg-primary;
+        }
+
+        &:hover::after {
+            background: color-mix(in srgb, var(--color-background), white 5%);
+            @apply cursor-pointer;
+        }
+    }
+
+    .scifi-button-tertiary {
+        @apply text-red-400/40 font-bold uppercase relative inline-block p-2 hover:text-red-200 hover:cursor-pointer transition-colors;
+        isolation: isolate;
+
+        &::before {
+            content: '';
+            @apply bg-red-400/40 absolute inset-0 -z-2  transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply bg-background absolute inset-px -z-1 transition-colors;
+            clip-path: polygon(
+                0px 10px,
+                10px 0px,
+                100% 0px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0px 100%
+            );
+        }
+
+        &:hover::before {
+            @apply bg-red-200;
+        }
+
+        &:hover::after {
+            background: color-mix(in srgb, var(--color-background), white 5%);
+            @apply cursor-pointer;
+        }
+    }
+
+    .bigger-corners {
+        @apply relative;
+
+        &::before {
+            content: '';
+            @apply absolute -inset-px border-2 z-10 border-accent pointer-events-none -motion-translate-x-in-[10px] motion-opacity-in motion-duration-150;
+
+            clip-path: polygon(
+                0px 0px,
+                40px 0px,
+                40px 2px,
+                2px 2px,
+                2px 40px,
+                0px 40px,
+                0px calc(100% - 40px),
+                2px calc(100% - 40px),
+                2px calc(100% - 2px),
+                40px calc(100% - 2px),
+                40px 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply absolute -inset-px border-2 z-10 border-accent pointer-events-none motion-translate-x-in-[10px] motion-opacity-in motion-duration-150;
+
+            clip-path: polygon(
+                100% 0px,
+                calc(100% - 40px) 0px,
+                calc(100% - 40px) 2px,
+                calc(100% - 2px) 2px,
+                calc(100% - 2px) 40px,
+                100% 40px,
+
+                100% calc(100% - 40px),
+                calc(100% - 2px) calc(100% - 40px),
+                calc(100% - 2px) calc(100% - 2px),
+                calc(100% - 40px) calc(100% - 2px),
+                calc(100% - 40px) 100%,
+                100% 100%
+            );
+        }
+    }
+
+    .member-card {
+        @apply relative inline-block;
+        isolation: isolate;
+
+        &::before {
+            content: '';
+            @apply bg-primary/40 absolute inset-0 -z-2 transition-colors;
+            clip-path: polygon(
+                0px 0px,
+                100% 0px,
+                100% calc(100% - 40px),
+                calc(100% - 40px) 100%,
+                0px 100%
+            );
+        }
+
+        &::after {
+            content: '';
+            @apply bg-background absolute inset-px -z-1 transition-colors;
+            clip-path: polygon(
+                0px 0px,
+                100% 0px,
+                100% calc(100% - 40px),
+                calc(100% - 40px) 100%,
+                0px 100%
+            );
+        }
+
+        &:hover::before {
+            @apply bg-primary;
+        }
+
+        &:hover::after {
+            background: color-mix(in srgb, var(--color-background), white 5%);
+            @apply cursor-pointer;
+        }
+    }
+}
