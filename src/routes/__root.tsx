@@ -37,7 +37,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
             },
             {
                 rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css2?family=Quantico&family=Vend+Sans&display=swap',
+                href: 'https://fonts.googleapis.com/css2?family=Michroma&family=Chakra+Petch&display=swap',
             },
         ],
     }),

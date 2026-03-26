@@ -1,14 +1,14 @@
 {
   "hero": {
-    "title": "E-WASTE HACKATHON 2026",
-    "subtitle": "Innovate. Create. Sustain.",
-    "description": "Join us for 48 hours of innovation where the brightest minds come together to tackle the growing challenge of electronic waste.",
+    "title": "EREBUS",
+    "subtitle": "Develop. Deploy. Declutter",
+    "description": "Join us for EREBUS, a two-day hackathon tackling one of modern aerospace’s most urgent challenges—space debris.\nCollaborate, innovate, and build solutions that shape a safer, more sustainable future for space exploration.",
     "ctaText": "Register Now",
     "ctaLink": "#register"
   },
   "about": {
     "title": "About the Hackathon",
-    "description": "The E-Waste Hackathon is a 48-hour event bringing together developers, designers, environmentalists, and entrepreneurs to build innovative solutions for electronic waste management. Participants will work in teams to create prototypes that address real-world e-waste challenges.",
+    "description": "EREBUS is a two-day hackathon bringing together aerospace, innovation, and space science enthusiasts to tackle the growing challenge of space debris. With multiple tracks to choose from, participants collaborate in teams to build impactful prototypes addressing real-world orbital sustainability problems. From predictive modeling and collision avoidance to debris mitigation strategies, each track pushes the boundaries of practical space solutions. Guided by mentors and evaluated by industry experts, teams will transform ideas into tangible innovations shaping the future of space.",
     "highlights": [
       {
         "title": "48 Hours",
