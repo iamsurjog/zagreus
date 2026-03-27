@@ -7,8 +7,8 @@ export default function Header() {
             border-b border-accent bg-linear-to-b from-primary/10 to-transparent to-61%"
         >
             <div className="flex justify-start items-center gap-3">
-                <img src="/Yantra_Logo.svg" alt="Yantra Logo" />
-                <img src="SEDS_Logo.svg" alt="SEDS Logo" />
+                <a href='https://terionix.com/' target='_blank'><img src="/terionix.png" alt="Terionix Logo" /></a>
+                <a href='https://sedsvit.in' target='_blank'><img src="SEDS_Logo.svg" alt="SEDS Logo" /></a>
             </div>
 
             <div className="flex">
