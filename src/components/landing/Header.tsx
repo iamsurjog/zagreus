@@ -7,8 +7,15 @@ export default function Header() {
             border-b border-accent bg-linear-to-b from-primary/10 to-transparent to-61%"
         >
             <div className="flex justify-start items-center gap-3">
-                <a href='https://terionix.com/' target='_blank'><img src="/terionix.png" alt="Terionix Logo" /></a>
-                <a href='https://sedsvit.in' target='_blank'><img src="SEDS_Logo.svg" alt="SEDS Logo" /></a>
+                <a href="https://terionix.com/" target="_blank">
+                    <img src="/terionix.png" alt="Terionix Logo" />
+                </a>
+                <a href="https://sedsvit.in" target="_blank">
+                    <img src="SEDS_Logo.svg" alt="SEDS Logo" />
+                </a>
+                <a href="https://vit.ac.in/" target="_blank">
+                    <img src="VITLogoEmblem.png" alt="VIT Logo" />
+                </a>
             </div>
 
             <div className="flex">
@@ -17,17 +24,14 @@ export default function Header() {
                     href={
                         'https://yantra.vit.ac.in/events/b881e74c-8cf6-4a86-9379-5ca18dcda6a4'
                     }
-                    className="block w-full h-full p-6 font-bold text-accent
-                    bg-radial from-secondary/60 to-secondary/20 uppercase
-                    hover:bg-white/5 transition-all"
+                    className="header-link"
                 >
                     Register
                 </a>
                 <Link
                     to="/dashboard"
-                    className="w-full h-full p-6 font-bold text-accent
-                    bg-radial from-secondary/60 to-secondary/20 uppercase
-                    hover:bg-white/5 transition-all"
+                    className="header-link"
+                    activeProps={{ className: 'header-link-active' }}
                 >
                     Dashboard
                 </Link>

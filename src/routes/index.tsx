@@ -1,7 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import hackathonData from '@/data/hackathon.json';
 import Header from '@/components/landing/Header';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Route = createFileRoute('/')({ component: Home });
 
@@ -55,42 +60,203 @@ function Countdown() {
 function Home() {
     const { hero, about, timeline, company, countdown } = hackathonData;
 
+    const heroRef = useRef<HTMLElement>(null);
+    const aboutRef = useRef<HTMLElement>(null);
+    const timelineRef = useRef<HTMLElement>(null);
+    const companyRef = useRef<HTMLElement>(null);
+    const countdownRef = useRef<HTMLElement>(null);
+
+    useGSAP(() => {
+        const heroEls = heroRef.current?.querySelectorAll('.anim-hero');
+        if (heroEls?.length) {
+            gsap.from(heroEls, {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const aboutTitle = aboutRef.current?.querySelector('.anim-about-title');
+        if (aboutTitle) {
+            gsap.from(aboutTitle, {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: aboutTitle,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const aboutDesc = aboutRef.current?.querySelector('.anim-about-desc');
+        if (aboutDesc) {
+            gsap.from(aboutDesc, {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: aboutDesc,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const aboutCards =
+            aboutRef.current?.querySelectorAll('.anim-about-card');
+        if (aboutCards?.length) {
+            gsap.from(aboutCards, {
+                y: 50,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.12,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: aboutCards[0],
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const timelineTitle = timelineRef.current?.querySelector(
+            '.anim-timeline-title',
+        );
+        if (timelineTitle) {
+            gsap.from(timelineTitle, {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: timelineTitle,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const timelineItems = timelineRef.current?.querySelectorAll(
+            '.anim-timeline-item',
+        );
+        if (timelineItems?.length) {
+            timelineItems.forEach((item) => {
+                const isLeft = item.classList.contains('anim-from-left');
+                gsap.from(item, {
+                    x: isLeft ? -60 : 60,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
+            });
+        }
+
+        const companyEls =
+            companyRef.current?.querySelectorAll('.anim-company');
+        if (companyEls?.length) {
+            gsap.from(companyEls, {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: companyRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const statEls = companyRef.current?.querySelectorAll('.anim-stat');
+        if (statEls?.length) {
+            gsap.from(statEls, {
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: statEls[0],
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+
+        const countdownEls =
+            countdownRef.current?.querySelectorAll('.anim-countdown');
+        if (countdownEls?.length) {
+            gsap.from(countdownEls, {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: countdownRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse',
+                },
+            });
+        }
+    }, []);
+
     return (
         <div className="text-text font-sans">
             <Header />
             {/* Hero */}
-            <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-title title-gradient bg-clip-text text-transparent mb-4 motion-preset-focus">
+            <section
+                ref={heroRef}
+                className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20"
+            >
+                <h1 className="anim-hero text-4xl md:text-6xl lg:text-7xl font-bold font-title title-gradient bg-clip-text text-transparent mb-4">
                     {hero.title}
                 </h1>
-                <p className="text-xl md:text-2xl text-primary font-title mb-6 motion-preset-focus motion-delay-100">
+                <p className="anim-hero text-xl md:text-2xl text-primary font-title mb-6">
                     {hero.subtitle}
                 </p>
-                <p className="max-w-2xl text-lg text-text/80 mb-10">
+                <p className="anim-hero max-w-2xl text-lg text-text/80 mb-10">
                     {hero.description}
                 </p>
                 <a
                     href={hero.ctaLink}
-                    className="scifi-button-primary px-8 py-3 text-lg"
+                    className="anim-hero scifi-button-primary px-8 py-3 text-lg"
                 >
                     {hero.ctaText}
                 </a>
             </section>
-
-            {/* About */}
-            <section className="py-20 px-6">
+{/* About */}
+            <section ref={aboutRef} className="py-20 px-6">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-6">
+                    <h2 className="anim-about-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-6">
                         {about.title}
                     </h2>
-                    <p className="text-lg text-text/80 text-center max-w-3xl mx-auto mb-16">
+                    <p className="anim-about-desc text-lg text-text/80 text-center max-w-3xl mx-auto mb-16">
                         {about.description}
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {about.highlights.map((h) => (
                             <div
                                 key={h.title}
-                                className="bigger-corners border border-secondary/40 rounded-2xl p-6 text-center"
+                                className="anim-about-card bigger-corners border border-secondary/40 rounded-2xl p-6 text-center"
                             >
                                 <h3 className="text-xl font-bold font-title text-accent mb-2">
                                     {h.title}
@@ -103,9 +269,9 @@ function Home() {
             </section>
 
             {/* Timeline */}
-            <section className="py-20 px-6">
+            <section ref={timelineRef} className="py-20 px-6">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-16">
+                    <h2 className="anim-timeline-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-16">
                         Timeline
                     </h2>
                     <div className="relative">
@@ -113,7 +279,7 @@ function Home() {
                         {timeline.map((item, i) => (
                             <div
                                 key={`${item.stage}-${i}`}
-                                className={`relative flex flex-col md:flex-row items-start mb-12 ${
+                                className={`anim-timeline-item ${i % 2 === 0 ? 'anim-from-left' : 'anim-from-right'} relative flex flex-col md:flex-row items-start mb-12 ${
                                     i % 2 === 0
                                         ? 'md:flex-row'
                                         : 'md:flex-row-reverse'
@@ -144,23 +310,26 @@ function Home() {
             </section>
 
             {/* Company */}
-            <section className="py-20 px-6">
+            <section ref={companyRef} className="py-20 px-6">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-2">
+                    <h2 className="anim-company text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-2">
                         Sponsored By
                     </h2>
-                    <h3 className="text-2xl md:text-3xl font-bold font-title text-accent mb-4">
+                    <h3 className="anim-company text-2xl md:text-3xl font-bold font-title text-accent mb-4">
                         {company.name}
                     </h3>
-                    <p className="text-lg text-primary/80 font-title mb-6">
+                    <p className="anim-company text-lg text-primary/80 font-title mb-6">
                         {company.tagline}
                     </p>
-                    <p className="max-w-3xl mx-auto text-text/80 mb-12">
+                    <p className="anim-company max-w-3xl mx-auto text-text/80 mb-12">
                         {company.description}
                     </p>
                     <div className="flex flex-wrap justify-center gap-12 mb-10">
                         {company.stats.map((stat) => (
-                            <div key={stat.label} className="text-center">
+                            <div
+                                key={stat.label}
+                                className="anim-stat text-center"
+                            >
                                 <span className="text-3xl md:text-4xl font-bold text-accent font-title">
                                     {stat.value}
                                 </span>
@@ -174,7 +343,7 @@ function Home() {
                         href={company.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="scifi-button-secondary px-6 py-2 font-title"
+                        className="anim-company scifi-button-secondary px-6 py-2 font-title"
                     >
                         Visit Website
                     </a>
@@ -182,11 +351,13 @@ function Home() {
             </section>
 
             {/* Countdown */}
-            <section className="py-20 px-6 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-10">
+            <section ref={countdownRef} className="py-20 px-6 text-center">
+                <h2 className="anim-countdown text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-10">
                     {countdown.title}
                 </h2>
-                <Countdown />
+                <div className="anim-countdown">
+                    <Countdown />
+                </div>
             </section>
         </div>
     );
