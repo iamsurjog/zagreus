@@ -14,21 +14,23 @@ export default function Header() {
                     <img src="SEDS_Logo.svg" alt="SEDS Logo" />
                 </a>
                 <a href="https://vit.ac.in/" target="_blank">
-                    <img src="VITLogoEmblem.png" alt="VIT Logo" />
+                    <img
+                        src="VITLogoEmblem.png"
+                        alt="VIT Logo"
+                        className="h-12"
+                    />
                 </a>
             </div>
 
             <div className="flex">
-            <a
+                <a
                     target="_blank"
-                    href={
-                        'https://vtop.vit.ac.in/'
-                    }
+                    href={'https://vtop.vit.ac.in/'}
                     className="header-link"
                 >
                     Register
                 </a>
-            {/*     <Link
+                {/*     <Link
                     to="/dashboard"
                     className="header-link"
                     activeProps={{ className: 'header-link-active' }}
