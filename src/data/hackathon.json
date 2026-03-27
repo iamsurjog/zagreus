@@ -66,24 +66,24 @@
     }
   ],
   "company": {
-    "name": "GreenTech Solutions",
+    "name": "Terionix",
     "tagline": "Pioneering Sustainable Technology",
     "description": "GreenTech Solutions is a leading innovator in sustainable technology and e-waste management. Founded with the mission to reduce the environmental impact of electronic waste, we develop cutting-edge recycling technologies and circular economy solutions that give electronics a second life.",
     "stats": [
       {
-        "value": "50K+",
-        "label": "Tons Recycled"
+        "value": "86",
+        "label": "Clients"
       },
       {
-        "value": "200+",
-        "label": "Partners"
+        "value": "49,630",
+        "label": "KGs E-Waste Recycled"
       },
       {
-        "value": "15",
-        "label": "Countries"
+        "value": "4",
+        "label": "Collection Centers"
       }
     ],
-    "website": "https://example.com"
+    "website": "https://terionix.com/"
   },
   "countdown": {
     "targetDate": "2026-03-30T00:00:00",

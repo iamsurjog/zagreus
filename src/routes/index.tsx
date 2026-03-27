@@ -56,7 +56,7 @@ function Home() {
     const { hero, about, timeline, company, countdown } = hackathonData;
 
     return (
-        <div className="bg-background text-text font-sans">
+        <div className="text-text font-sans">
             <Header />
             {/* Hero */}
             <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
