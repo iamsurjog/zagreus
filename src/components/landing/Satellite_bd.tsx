@@ -1177,10 +1177,11 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[]
 }
 
-export default function Model(props: ComponentPropsWithoutRef<'group'>) {
+export default function Model(time: number) {
   const group = React.useRef<THREE.Group>(null)
   const { nodes, materials, animations } = useGLTF('/satellite_bd.glb') as unknown as GLTFResult
-  const { actions } = useAnimations(animations, group)
+  const { actions, mixer } = useAnimations(animations, group)
+  mixer.setTime(time)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

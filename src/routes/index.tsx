@@ -71,6 +71,8 @@ function Home() {
     const companyRef = useRef<HTMLElement>(null);
     const countdownRef = useRef<HTMLElement>(null);
 
+    const [time, setTime] = useState(0);
+
     useGSAP(() => {
         const heroEls = heroRef.current?.querySelectorAll('.anim-hero');
         if (heroEls?.length) {
@@ -235,7 +237,7 @@ function Home() {
                     <directionalLight position={[-3, 2, 10]} intensity={5} />
                     <directionalLight position={[0, 0, 10]} intensity={5} />
                     <group rotation={[4 * Math.PI / 8, 0, 0]} scale={0.8}>
-                        <Model />
+                        <Model time={time}/>
                     </group>
                     {/* <Model rotation={[Math.PI/2, 0, Math.PI/4]}/> */}
                     {/* <Environment preset={'studio'} /> */}
