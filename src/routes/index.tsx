@@ -239,6 +239,7 @@ function Home() {
                 <a
                     href={hero.ctaLink}
                     className="anim-hero scifi-button-primary px-8 py-3 text-lg"
+                    target='_blank'
                 >
                     {hero.ctaText}
                 </a>
@@ -308,6 +309,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <section className='h-5'></section>
 
             {/* Company */}
             <section ref={companyRef} className="py-20 px-6">

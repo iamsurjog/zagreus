@@ -19,22 +19,22 @@ export default function Header() {
             </div>
 
             <div className="flex">
-                <a
+            <a
                     target="_blank"
                     href={
-                        'https://yantra.vit.ac.in/events/b881e74c-8cf6-4a86-9379-5ca18dcda6a4'
+                        'https://vtop.vit.ac.in/'
                     }
                     className="header-link"
                 >
                     Register
                 </a>
-                <Link
+            {/*     <Link
                     to="/dashboard"
                     className="header-link"
                     activeProps={{ className: 'header-link-active' }}
                 >
                     Dashboard
-                </Link>
+                </Link> */}
             </div>
         </header>
     );

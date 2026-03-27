@@ -4,14 +4,14 @@
     "subtitle": "Develop. Deploy. Declutter",
     "description": "Join us for EREBUS, a two-day hackathon tackling one of modern aerospace’s most urgent challenges—space debris.\nCollaborate, innovate, and build solutions that shape a safer, more sustainable future for space exploration.",
     "ctaText": "Register Now",
-    "ctaLink": "#register"
+    "ctaLink": "https://vtop.vit.ac.in/"
   },
   "about": {
     "title": "About the Hackathon",
     "description": "EREBUS is a two-day hackathon bringing together aerospace, innovation, and space science enthusiasts to tackle the growing challenge of space debris. With multiple tracks to choose from, participants collaborate in teams to build impactful prototypes addressing real-world orbital sustainability problems. From predictive modeling and collision avoidance to debris mitigation strategies, each track pushes the boundaries of practical space solutions. Guided by mentors and evaluated by industry experts, teams will transform ideas into tangible innovations shaping the future of space.",
     "highlights": [
       {
-        "title": "48 Hours",
+        "title": "36 Hours",
         "description": "Non-stop innovation and building"
       },
       {
@@ -19,8 +19,8 @@
         "description": "Exciting prizes for winning teams"
       },
       {
-        "title": "Mentorship",
-        "description": "Guidance from industry experts"
+        "title": "Internship Offer",
+        "description": "Chance to get an internship"
       },
       {
         "title": "Networking",
@@ -31,7 +31,7 @@
   "timeline": [
     {
       "stage": "Registration Opens",
-      "date": "March 1, 2026",
+      "date": "March 27, 2026",
       "description": "Sign up and form your team. Early registration is encouraged as spots are limited."
     },
     {
@@ -40,29 +40,14 @@
       "description": "Opening ceremony, problem statements revealed, and hacking begins."
     },
     {
-      "stage": "Mentorship Sessions",
-      "date": "March 30 - 31, 2026",
-      "description": "Scheduled check-ins with mentors to refine your ideas and get expert feedback."
-    },
-    {
       "stage": "Midpoint Check-in",
-      "date": "March 31, 2026",
+      "date": "March 30-31, 2026",
       "description": "Progress review and feedback from judges. Adjust your approach based on insights."
     },
     {
-      "stage": "Submissions Due",
-      "date": "April 1, 2026",
+      "stage": "Final Round",
+      "date": "March 31, 2026",
       "description": "Final submissions and demo preparation. Present your solution to the judges."
-    },
-    {
-      "stage": "Stage 3 dementia",
-      "date": "April 1, 2026",
-      "description": "Winners announced, prizes distributed, and closing celebration."
-    },
-    {
-      "stage": "Awards Ceremony",
-      "date": "April 1, 2026",
-      "description": "Winners announced, prizes distributed, and closing celebration."
     }
   ],
   "company": {
