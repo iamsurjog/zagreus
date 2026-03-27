@@ -3,12 +3,17 @@ import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls, Stars } from "@react-three/drei";
 import hackathonData from '@/data/hackathon.json';
 import Header from '@/components/landing/Header';
 
+
+import Model from "@/components/landing/Satellite_bd"
+
 gsap.registerPlugin(ScrollTrigger);
 
-export const Route = createFileRoute('/')({ component: Home });
+export const Route = createFileRoute('/')({ component: Home, ssr: false });
 
 function Countdown() {
     const target = new Date(hackathonData.countdown.targetDate).getTime();
@@ -220,147 +225,166 @@ function Home() {
     }, []);
 
     return (
-        <div className="text-text font-sans">
-            <Header />
-            {/* Hero */}
-            <section
-                ref={heroRef}
-                className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20"
-            >
-                <h1 className="anim-hero text-4xl md:text-6xl lg:text-7xl font-bold font-title title-gradient bg-clip-text text-transparent mb-4">
-                    {hero.title}
-                </h1>
-                <p className="anim-hero text-xl md:text-2xl text-primary font-title mb-6">
-                    {hero.subtitle}
-                </p>
-                <p className="anim-hero max-w-2xl text-lg text-text/80 mb-10">
-                    {hero.description}
-                </p>
-                <a
-                    href={hero.ctaLink}
-                    className="anim-hero scifi-button-primary px-8 py-3 text-lg"
-                    target='_blank'
-                >
-                    {hero.ctaText}
-                </a>
-            </section>
-{/* About */}
-            <section ref={aboutRef} className="py-20 px-6">
-                <div className="max-w-5xl mx-auto">
-                    <h2 className="anim-about-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-6">
-                        {about.title}
-                    </h2>
-                    <p className="anim-about-desc text-lg text-text/80 text-center max-w-3xl mx-auto mb-16">
-                        {about.description}
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {about.highlights.map((h) => (
-                            <div
-                                key={h.title}
-                                className="anim-about-card bigger-corners border border-secondary/40 rounded-2xl p-6 text-center"
-                            >
-                                <h3 className="text-xl font-bold font-title text-accent mb-2">
-                                    {h.title}
-                                </h3>
-                                <p className="text-text/70">{h.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+        <>
+            <div className="bg-transparent fixed h-full top-0 left-0 w-full">
+                <Canvas frameloop="demand">
+                    {/* <ambientLight intensity={50} /> */}
+                    <directionalLight position={[5, -2, 10]} intensity={5} />
+                    <directionalLight position={[-5, 2, 10]} intensity={5} />
+                    <directionalLight position={[3, -2, 10]} intensity={5} />
+                    <directionalLight position={[-3, 2, 10]} intensity={5} />
+                    <directionalLight position={[0, 0, 10]} intensity={5} />
+                    <group rotation={[4 * Math.PI / 8, 0, 0]} scale={0.8}>
+                        <Model />
+                    </group>
+                    {/* <Model rotation={[Math.PI/2, 0, Math.PI/4]}/> */}
+                    {/* <Environment preset={'studio'} /> */}
 
-            {/* Timeline */}
-            <section ref={timelineRef} className="py-20 px-6">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="anim-timeline-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-16">
-                        Timeline
-                    </h2>
-                    <div className="relative">
-                        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-secondary/40 -translate-x-1/2" />
-                        {timeline.map((item, i) => (
-                            <div
-                                key={`${item.stage}-${i}`}
-                                className={`anim-timeline-item ${i % 2 === 0 ? 'anim-from-left' : 'anim-from-right'} relative flex flex-col md:flex-row items-start mb-12 ${
-                                    i % 2 === 0
+
+                </Canvas>
+
+            </div>
+
+            <div className="text-text font-sans bg-transparent z-10">
+                <Header />
+                {/* Hero */}
+                <section
+                    ref={heroRef}
+                    className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 bg-transparent"
+                >
+                    <h1 className="anim-hero text-4xl md:text-6xl lg:text-7xl font-bold font-title title-gradient bg-clip-text text-transparent mb-4">
+                        {hero.title}
+                    </h1>
+                    <p className="anim-hero text-xl md:text-2xl text-primary font-title mb-6">
+                        {hero.subtitle}
+                    </p>
+                    <p className="anim-hero max-w-2xl text-lg text-text/80 mb-10">
+                        {hero.description}
+                    </p>
+                    <a
+                        href={hero.ctaLink}
+                        className="anim-hero scifi-button-primary px-8 py-3 text-lg"
+                        target='_blank'
+                    >
+                        {hero.ctaText}
+                    </a>
+                </section>
+                {/* About */}
+                <section ref={aboutRef} className="py-20 px-6">
+                    <div className="max-w-5xl mx-auto">
+                        <h2 className="anim-about-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-6">
+                            {about.title}
+                        </h2>
+                        <p className="anim-about-desc text-lg text-text/80 text-center max-w-3xl mx-auto mb-16">
+                            {about.description}
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {about.highlights.map((h) => (
+                                <div
+                                    key={h.title}
+                                    className="anim-about-card bigger-corners border border-secondary/40 rounded-2xl p-6 text-center"
+                                >
+                                    <h3 className="text-xl font-bold font-title text-accent mb-2">
+                                        {h.title}
+                                    </h3>
+                                    <p className="text-text/70">{h.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Timeline */}
+                <section ref={timelineRef} className="py-20 px-6">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="anim-timeline-title text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent text-center mb-16">
+                            Timeline
+                        </h2>
+                        <div className="relative">
+                            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-secondary/40 -translate-x-1/2" />
+                            {timeline.map((item, i) => (
+                                <div
+                                    key={`${item.stage}-${i}`}
+                                    className={`anim-timeline-item ${i % 2 === 0 ? 'anim-from-left' : 'anim-from-right'} relative flex flex-col md:flex-row items-start mb-12 ${i % 2 === 0
                                         ? 'md:flex-row'
                                         : 'md:flex-row-reverse'
-                                }`}
-                            >
-                                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full -translate-x-1/2 mt-2" />
-                                <div
-                                    className={`ml-10 md:ml-0 md:w-1/2 ${
-                                        i % 2 === 0
+                                        }`}
+                                >
+                                    <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full -translate-x-1/2 mt-2" />
+                                    <div
+                                        className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0
                                             ? 'md:pr-12 md:text-right'
                                             : 'md:pl-12'
-                                    }`}
+                                            }`}
+                                    >
+                                        <span className="text-sm text-primary font-title">
+                                            {item.date}
+                                        </span>
+                                        <h3 className="text-xl font-bold font-title text-accent mt-1">
+                                            {item.stage}
+                                        </h3>
+                                        <p className="text-text/70 mt-2">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+                <section className='h-5'></section>
+
+                {/* Company */}
+                <section ref={companyRef} className="py-20 px-6">
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h2 className="anim-company text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-2">
+                            Sponsored By
+                        </h2>
+                        <h3 className="anim-company text-2xl md:text-3xl font-bold font-title text-accent mb-4">
+                            {company.name}
+                        </h3>
+                        <p className="anim-company text-lg text-primary/80 font-title mb-6">
+                            {company.tagline}
+                        </p>
+                        <p className="anim-company max-w-3xl mx-auto text-text/80 mb-12">
+                            {company.description}
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-12 mb-10">
+                            {company.stats.map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="anim-stat text-center"
                                 >
-                                    <span className="text-sm text-primary font-title">
-                                        {item.date}
+                                    <span className="text-3xl md:text-4xl font-bold text-accent font-title">
+                                        {stat.value}
                                     </span>
-                                    <h3 className="text-xl font-bold font-title text-accent mt-1">
-                                        {item.stage}
-                                    </h3>
-                                    <p className="text-text/70 mt-2">
-                                        {item.description}
+                                    <p className="text-text/60 mt-1">
+                                        {stat.label}
                                     </p>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                        <a
+                            href={company.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="anim-company scifi-button-secondary px-6 py-2 font-title"
+                        >
+                            Visit Website
+                        </a>
                     </div>
-                </div>
-            </section>
-            <section className='h-5'></section>
+                </section>
 
-            {/* Company */}
-            <section ref={companyRef} className="py-20 px-6">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="anim-company text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-2">
-                        Sponsored By
+                {/* Countdown */}
+                <section ref={countdownRef} className="py-20 px-6 text-center">
+                    <h2 className="anim-countdown text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-10">
+                        {countdown.title}
                     </h2>
-                    <h3 className="anim-company text-2xl md:text-3xl font-bold font-title text-accent mb-4">
-                        {company.name}
-                    </h3>
-                    <p className="anim-company text-lg text-primary/80 font-title mb-6">
-                        {company.tagline}
-                    </p>
-                    <p className="anim-company max-w-3xl mx-auto text-text/80 mb-12">
-                        {company.description}
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-12 mb-10">
-                        {company.stats.map((stat) => (
-                            <div
-                                key={stat.label}
-                                className="anim-stat text-center"
-                            >
-                                <span className="text-3xl md:text-4xl font-bold text-accent font-title">
-                                    {stat.value}
-                                </span>
-                                <p className="text-text/60 mt-1">
-                                    {stat.label}
-                                </p>
-                            </div>
-                        ))}
+                    <div className="anim-countdown">
+                        <Countdown />
                     </div>
-                    <a
-                        href={company.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="anim-company scifi-button-secondary px-6 py-2 font-title"
-                    >
-                        Visit Website
-                    </a>
-                </div>
-            </section>
-
-            {/* Countdown */}
-            <section ref={countdownRef} className="py-20 px-6 text-center">
-                <h2 className="anim-countdown text-3xl md:text-4xl font-bold font-title title-gradient bg-clip-text text-transparent mb-10">
-                    {countdown.title}
-                </h2>
-                <div className="anim-countdown">
-                    <Countdown />
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
+        </>
     );
 }
