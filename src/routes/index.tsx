@@ -224,12 +224,28 @@ function Home() {
                 },
             });
         }
+        const animationDuration = 10; 
+
+        gsap.to({}, {
+            duration: animationDuration,
+            scrollTrigger: {
+                trigger: "body", // Scrub across the whole page
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.5, // Smoothing
+                onUpdate: (self) => {
+                    // self.progress is a value between 0 and 1
+                    setTime(self.progress * animationDuration);
+                    console.log(self.progress)
+                }
+            }
+        });
     }, []);
 
     return (
         <>
             <div className="bg-transparent fixed h-full top-0 left-0 w-full">
-                <Canvas frameloop="demand">
+                <Canvas frameloop="always">
                     {/* <ambientLight intensity={50} /> */}
                     <directionalLight position={[5, -2, 10]} intensity={5} />
                     <directionalLight position={[-5, 2, 10]} intensity={5} />

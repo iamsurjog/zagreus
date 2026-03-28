@@ -4,9 +4,13 @@ Command: npx gltfjsx@6.5.3 satellite_bd.glb -t
 */
 
 import * as THREE from 'three'
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { ComponentPropsWithoutRef, useLayoutEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 import { GLTF } from 'three-stdlib'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 
 type ActionName =
   | 'Plane.005_cell.001Action'
@@ -1177,13 +1181,32 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[]
 }
 
-export default function Model(time: number) {
+export default function Model({time}:{time: number}) {
   const group = React.useRef<THREE.Group>(null)
   const { nodes, materials, animations } = useGLTF('/satellite_bd.glb') as unknown as GLTFResult
   const { actions, mixer } = useAnimations(animations, group)
-  mixer.setTime(time)
+
+  // 1. Initial Setup: Prime all actions
+  useLayoutEffect(() => {
+    if (!actions) return;
+    
+    Object.values(actions).forEach((action) => {
+      if (action) {
+        action.reset().play();
+        action.paused = true; // Freeze the clock
+        action.setEffectiveWeight(1); // Ensure visibility
+      }
+    });
+  }, [actions]);
+
+  // 2. The Fundamental Fix: Sync every frame
+  // Instead of useLayoutEffect for syncing, useFrame is more reliable 
+  // for scrubbing because it runs inside the Three.js render loop.
+  useFrame(() => {
+    mixer.setTime(time);
+  });
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} dispose={null}>
       <group name="Scene">
         <group name="Plane005_cell095_cell001" position={[-1.378, -0.074, -0.817]} scale={0.969} />
         <group name="Plane005_cell040_cell002" position={[-1.349, -0.073, 0.624]} scale={0.969} />
