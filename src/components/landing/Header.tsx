@@ -30,13 +30,13 @@ export default function Header() {
                 >
                     Register
                 </a>
-                {/*     <Link
-                    to="/dashboard"
+                <Link
+                    to="/missions"
                     className="header-link"
                     activeProps={{ className: 'header-link-active' }}
                 >
-                    Dashboard
-                </Link> */}
+                    Missions
+                </Link>
             </div>
         </header>
     );

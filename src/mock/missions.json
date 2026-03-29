@@ -1,50 +1,44 @@
 [
     {
         "id": "mis-1",
-        "name": "Alderaan",
-        "description": "Design a decentralized satellite data marketplace where farmers can access real-time agricultural monitoring data. Implement token-gated access and transparent data provenance tracking using blockchain technology.",
-        "documentName": "PS1.pdf"
+        "name": "Project K-Trigger",
+        "description": "Predictive Orbital Chain-Reaction & Mitigation System",
+        "documentName": "PS1_EREBUS.pdf"
     },
     {
         "id": "mis-2",
-        "name": "Dathomir",
-        "description": "Build a Web3-based disaster early warning system that aggregates satellite imagery and weather data. Use smart contracts to automate alert distribution and ensure data integrity across multiple agencies.",
-        "documentName": "PS2.pdf"
+        "name": "Project OrbitLex",
+        "description": "Mission Compliance & Debris Impact Analyser",
+        "documentName": "PS2_EREBUS.pdf"
     },
     {
         "id": "mis-3",
-        "name": "Hoth",
-        "description": "Create a decentralized platform for tracking deforestation using satellite imagery. Implement verifiable carbon credit calculations and transparent reporting for environmental compliance.",
-        "documentName": "PS3.pdf"
+        "name": "Project HandShake",
+        "description": "Data Sharing Agreement Health Dashboard for Space Organisations ",
+        "documentName": "PS3_EREBUS.pdf"
     },
     {
         "id": "mis-4",
-        "name": "Kessel",
-        "description": "Develop a blockchain-verified maritime tracking system using satellite AIS data. Ensure vessel identity verification and prevent spoofing through decentralized consensus mechanisms.",
-        "documentName": "PS4.pdf"
+        "name": "Project Frag-Map",
+        "description": "Orbital Density Visualizer",
+        "documentName": "PS4_EREBUS.pdf"
     },
     {
         "id": "mis-5",
-        "name": "Lothal",
-        "description": "Build a Web3 urban planning tool that uses satellite data for smart city development. Implement community governance for land use decisions with transparent satellite-based monitoring.",
-        "documentName": "PS5.pdf"
+        "name": "Project Flux-ID",
+        "description": "The Albedo Signature Archive",
+        "documentName": "PS5_EREBUS.pdf"
     },
     {
         "id": "mis-6",
-        "name": "Mustafar",
-        "description": "Design a decentralized volcanic activity monitoring network using satellite thermal data. Create automated insurance payout smart contracts triggered by verified geological events.",
-        "documentName": "PS6.pdf"
+        "name": "Project OrbitSafe",
+        "description": "Build a Satellite End-of-Life Disposal Viability Checker",
+        "documentName": "PS6_EREBUS.pdf"
     },
     {
         "id": "mis-7",
-        "name": "Tatooine",
-        "description": "Create a Web3 water resource management system using satellite hydrology data. Implement transparent water usage tracking and decentralized allocation for arid regions.",
-        "documentName": "PS7.pdf"
-    },
-    {
-        "id": "mis-8",
-        "name": "Utapau",
-        "description": "Build a decentralized wildlife conservation platform using satellite tracking data. Implement tokenized conservation credits and transparent habitat monitoring for endangered species.",
-        "documentName": "PS8.pdf"
+        "name": "Project COSMOTAG",
+        "description": "Automated Space Debris Classification",
+        "documentName": "PS5_EREBUS.pdf"
     }
 ]

@@ -173,7 +173,7 @@ function RouteComponent() {
     return (
         <main>
             <div className="flex flex-col gap-4 justify-between w-full p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 gap-3 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 w-full">
                     {missions.length !== 0 &&
                         missions.map((ps, i) => {
                             return (
@@ -197,7 +197,8 @@ function RouteComponent() {
                                                 problemStatementContents[i]
                                                     .planetImg
                                             }
-                                            isActive={ps.id == psId}
+                                            // isActive={ps.id == psId}
+                                            isActive={false}
                                         />
                                     }
                                 >
@@ -235,14 +236,14 @@ function RouteComponent() {
                         })}
                 </div>
 
-                <div className="font-bold text-2xl sm:text-4xl md:text-6xl text-transparent uppercase flex gap-2 sm:gap-4">
+                {/* }<div className="font-bold text-2xl sm:text-4xl md:text-6xl text-transparent uppercase flex gap-2 sm:gap-4">
                     <h1 className="text-text font-heading [-webkit-text-stroke:1px_white] text-nowrap">
                         Choose your
                     </h1>
                     <h1 className="bg-clip-text text-transparent bg-linear-to-b from-accent to-secondary text-shadow-[0_8px_16px_#8CB6DC40]">
                         mission
                     </h1>
-                </div>
+                </div> */}
             </div>
         </main>
     );

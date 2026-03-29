@@ -5,11 +5,11 @@ export default function Header({ username }: { username: string }) {
         <header className="relative flex justify-between bg-linear-to-b from-primary/10 p-0.5 to-transparent to-60%  border-b border-accent">
             <div className="flex">
                 <Link
-                    to="/dashboard"
+                    to="/"
                     className="header-link"
                     activeProps={{ className: 'header-link-active' }}
                 >
-                    Houston
+                    Home
                 </Link>
                 <Link
                     to="/missions"
@@ -18,19 +18,19 @@ export default function Header({ username }: { username: string }) {
                 >
                     Missions
                 </Link>
-                <Link
+                {/*  <Link
                     to="/squad"
                     className="header-link"
                     activeProps={{ className: 'header-link-active' }}
                 >
                     Squad
-                </Link>
+                </Link> */}
             </div>
             <img
-                src="/Logo.svg"
-                className="w-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                src="/SEDS_Logo.svg"
+                className="w-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             />
-            <div className="relative h-full">
+            {/* <div className="relative h-full">
                 <Link
                     to="/"
                     className="header-link-active flex items-center justify-center px-4 py-6 h-full uppercase text-lg border border-accent border-dashed
@@ -38,7 +38,7 @@ export default function Header({ username }: { username: string }) {
                 >
                     {username}
                 </Link>
-            </div>
+            </div> */}
         </header>
     );
 }
